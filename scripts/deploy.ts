@@ -4,6 +4,7 @@ import * as path from 'path';
 
 const dbName = process.env.D1_DATABASE_NAME || 'moepush-db';
 const cloudflareApiToken = process.env.CLOUDFLARE_API_TOKEN;
+console.log('cloudflareApiToken:', cloudflareApiToken); // 调试用，实际部署时可移除
 const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
 const projectName = process.env.PROJECT_NAME || 'moepush';
 
