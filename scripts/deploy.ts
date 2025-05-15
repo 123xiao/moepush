@@ -82,13 +82,15 @@ const checkProjectExists = async () => {
                 'Content-Type': 'application/json',
             },
         });
-
+        
         if (!response.ok && response.status === 404) {
             console.log(`Project ${projectName} does not exist. Creating...`);
             await createProject();
         } else {
             console.log(`Project ${projectName} already exists.`);
         }
+        const rawData = await response.text(); // 获取原始文本数据
+        console.log('原始响应数据:', rawData);
     } catch (error) {
         console.error('Error checking project existence:', error);
         throw error;
